@@ -1,5 +1,5 @@
 # Base image
-FROM node:14-alpine
+FROM node:14
 
 # Install Python 3 and other dependencies needed for the AWS CLI
 RUN apt-get update && apt-get install -y python3 python3-pip unzip && \
