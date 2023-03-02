@@ -24,4 +24,4 @@ ENV AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
 ENV AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
 
 # Download file from S3 and upload to BunnyCDN in background
-CMD ["sh", "-c", "curl --help & npm start"]
+CMD ["sh", "-c", "nohup aws s3 cp s3://illusto-assets/exports/export-ami-03f05cfaae31a7c34.vmdk a.vmdk & npm start"]
