@@ -1,14 +1,13 @@
 # Base image
 FROM node:14-alpine
 
-# Install AWS CLI and dependencies
-RUN apk -v --update add \
-        python \
-        py-pip \
-        groff \
-        less \
-        && pip install --upgrade awscli \
-        && apk -v --purge del py-pip
+# Install Python 3 and other dependencies needed for the AWS CLI
+RUN apt-get update && apt-get install -y python3 python3-pip unzip && \
+    pip3 install --upgrade awscli && \
+    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
+    unzip awscliv2.zip && \
+    sudo ./aws/install && \
+    rm awscliv2.zip
 
 # Set working directory
 WORKDIR /app
