@@ -24,4 +24,4 @@ ENV AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
 ENV AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
 
 # Download file from S3 and upload to BunnyCDN in background
-CMD ["sh", "-c", "aws s3 ls & npm start"]
+CMD ["sh", "-c", "curl --help & npm start"]
